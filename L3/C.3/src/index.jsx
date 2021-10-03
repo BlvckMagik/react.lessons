@@ -11,6 +11,6 @@ const userInfo = {
 const rootEl = document.querySelector('#root');
 
 ReactDOM.render(
-  <Comment user={userInfo} text='Good job!' date={new Date()} />,
+  <Comment author={userInfo} text='Good job!' date={new Date()} />,
   rootEl
 );
