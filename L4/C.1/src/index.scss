@@ -1,0 +1,17 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.counter {
+  border: 5px coral solid;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+}
