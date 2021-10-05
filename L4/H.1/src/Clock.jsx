@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import './clock.scss';
 import moment from 'moment';
+import './clock.scss';
 
 const getTimeWithOffset = offset => {
   const currentTime = new Date();
   const utcOffset = currentTime.getTimezoneOffset() / 60;
   return new Date(
-    currentTime.setHours(currentTime.getHours() + offset + utcOffset + 1)
+    currentTime.setHours(currentTime.getHours() + offset + utcOffset)
   );
 };
 
