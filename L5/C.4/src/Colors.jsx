@@ -9,15 +9,15 @@ class Colors extends Component {
     return (
       <div className='colors'>
         <button
-          onClick={() => this.changeColor('red')}
+          onClick={this.changeColor.bind(this, 'red')}
           className='colors__button red'
         ></button>
         <button
-          onClick={() => this.changeColor('green')}
+          onClick={this.changeColor.bind(this, 'green')}
           className='colors__button green'
         ></button>
         <button
-          onClick={() => this.changeColor('blue')}
+          onClick={this.changeColor.bind(this, 'blue')}
           className='colors__button blue'
         ></button>
       </div>
