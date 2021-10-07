@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+const RED = '#f00';
+const GREEN = '#0f0';
+const BLUE = '#00f';
+
 class Colors extends Component {
   changeColor = color => {
     document.body.style.backgroundColor = color;
@@ -9,15 +13,15 @@ class Colors extends Component {
     return (
       <div className='colors'>
         <button
-          onClick={this.changeColor.bind(this, 'red')}
+          onClick={() => this.changeColor(RED)}
           className='colors__button red'
         ></button>
         <button
-          onClick={this.changeColor.bind(this, 'green')}
+          onClick={() => this.changeColor(GREEN)}
           className='colors__button green'
         ></button>
         <button
-          onClick={this.changeColor.bind(this, 'blue')}
+          onClick={() => this.changeColor(BLUE)}
           className='colors__button blue'
         ></button>
       </div>
