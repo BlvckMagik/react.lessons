@@ -17,7 +17,7 @@ class Page extends Component {
       <div className='page'>
         <Message text={this.state.text} />
         <div className='actions'>
-          <button onClick={() => this.onClick('Hello world!')} className='btn'>
+          <button onClick={() => this.onClick('Hello, world!')} className='btn'>
             Text 1
           </button>
           <button
