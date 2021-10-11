@@ -4,18 +4,19 @@ import Offline from './Offline.jsx';
 
 class Status extends Component {
   state = {
-    isOnline: false,
+    isOnline: true,
   };
 
-  onClick = () => {
-    this.setState({
-      isOnline: true,
-    });
-  };
+  //   onClick = () => {
+  //     this.setState({
+  //       isOnline: true,
+  //     });
+  //   };
+  // onClick={this.onClick}
 
   render() {
     if (this.state.isOnline) return <Online />;
-    return <Offline onClick={this.onClick} />;
+    return <Offline />;
   }
 }
 
