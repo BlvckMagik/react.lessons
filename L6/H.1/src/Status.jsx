@@ -7,16 +7,18 @@ class Status extends Component {
     isOnline: false,
   };
 
-  //   onClick = () => {
-  //     this.setState({
-  //       isOnline: true,
-  //     });
-  //   };
-  // onClick={this.onClick}
+  onClick = () => {
+    this.setState({
+      isOnline: true,
+    });
+  };
 
   render() {
-    if (this.state.isOnline) return <Online />;
-    return <Offline />;
+    return (
+      <div className='status'>
+        {this.state.isOnline ? <Online /> : <Offline onClick={this.onClick} />}
+      </div>
+    );
   }
 }
 

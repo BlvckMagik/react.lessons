@@ -1,11 +1,7 @@
 import React from 'react';
 
 const Online = () => {
-  return (
-    <div class='status'>
-      <div className='status__text'>All good!</div>;
-    </div>
-  );
+  return <div className='status__text'>All good!</div>;
 };
 
 export default Online;
