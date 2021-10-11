@@ -3,20 +3,24 @@ import Online from './Online.jsx';
 import Offline from './Offline.jsx';
 
 class Status extends Component {
-  state = {
-    isOnline: false,
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      status: props.isOnline,
+    };
+  }
 
   onClick = () => {
     this.setState({
-      isOnline: true,
+      status: true,
     });
   };
 
   render() {
     return (
       <div className='status'>
-        {this.state.isOnline ? <Online /> : <Offline onClick={this.onClick} />}
+        {this.state.status ? <Online /> : <Offline onClick={this.onClick} />}
       </div>
     );
   }
