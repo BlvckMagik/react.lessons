@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Greeting from './Greeting.jsx';
+import Spinner from './Spinner.jsx';
 import Login from './Login.jsx';
 import Logout from './Logout.jsx';
 
@@ -10,8 +10,14 @@ class Auth extends Component {
 
   onLogin = () => {
     this.setState({
-      isLoggedIn: true,
+      isLoggedIn: 'spinner',
     });
+
+    setTimeout(() => {
+      this.setState({
+        isLoggedIn: true,
+      });
+    }, 2000);
   };
 
   onLogout = () => {
@@ -21,18 +27,13 @@ class Auth extends Component {
   };
 
   render() {
-    const button = this.state.isLoggedIn ? (
-      <Logout onLogout={this.onLogout} />
-    ) : (
-      <Login onLogin={this.onLogin} />
-    );
-
-    return (
-      <div className='panel'>
-        <Greeting isLoggedIn={this.state.isLoggedIn} />
-        {button}
-      </div>
-    );
+    if (!this.state.isLoggedIn) {
+      return <Login onLogin={this.onLogin} />;
+    } else if (this.state.isLoggedIn === 'spinner') {
+      return <Spinner size='40px' />;
+    } else if (this.state.isLoggedIn) {
+      return <Logout onLogout={this.onLogout} />;
+    }
   }
 }
 
