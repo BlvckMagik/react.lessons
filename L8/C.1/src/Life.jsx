@@ -4,6 +4,10 @@ class UsersList extends Component {
   constructor() {
     super();
     console.log('constructor: good place to create state');
+
+    this.state = {
+      text: null,
+    };
   }
 
   componentDidMount() {
@@ -14,6 +18,7 @@ class UsersList extends Component {
     console.log(
       'shouldComponentUpdate(nextProps, nextState): decide to render or not to render'
     );
+    return true;
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -28,9 +33,25 @@ class UsersList extends Component {
     );
   }
 
+  showText = text => {
+    this.setState({
+      text,
+    });
+  };
+
   render() {
     console.log('return React element to build DOM');
-    return <div className='text'>return React element to build DOM</div>;
+    return (
+      <>
+        <button
+          className='button'
+          onClick={() => this.showText(`Oh shit, I'm sorry`)}
+        >
+          Show Text
+        </button>
+        {this.state.text && <div className='text'>{this.state.text}</div>}
+      </>
+    );
   }
 }
 
