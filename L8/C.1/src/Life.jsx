@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class UsersList extends Component {
+class Life extends Component {
   constructor() {
     super();
     console.log('constructor: good place to create state');
@@ -55,4 +55,4 @@ class UsersList extends Component {
   }
 }
 
-export default UsersList;
+export default Life;
