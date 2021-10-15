@@ -20,3 +20,15 @@ body {
   border: gray 2px solid;
   border-radius: 12px;
 }
+
+.button {
+  height: 50px;
+  width: 120px;
+  border: gray 2px solid;
+  border-radius: 12px;
+  margin-right: 40px;
+  background-color: transparent;
+  font-size: larger;
+  font-weight: 700;
+  cursor: pointer;
+}
