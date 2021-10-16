@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 
 class ConnectionStatus extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      status: 'online',
-    };
-  }
+  state = {
+    status: 'online',
+  };
 
   componentDidMount() {
     window.addEventListener('online', this.onlineEvent);
@@ -33,9 +29,9 @@ class ConnectionStatus extends Component {
 
   render() {
     return this.state.status === 'online' ? (
-      <div className='status'>Online</div>
+      <div className='status'>{this.state.status}</div>
     ) : (
-      <div className='status status_offline'>Offline</div>
+      <div className='status status_offline'>{this.state.status}</div>
     );
   }
 }
