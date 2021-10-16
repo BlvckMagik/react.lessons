@@ -4,7 +4,7 @@ class Dimensions extends Component {
   constructor() {
     super();
 
-    const { innerWidth, innerHeight } = document;
+    const { innerWidth, innerHeight } = window;
     this.state = {
       width: innerWidth,
       height: innerHeight,
@@ -22,7 +22,6 @@ class Dimensions extends Component {
 
   onWindowChange = e => {
     const { innerWidth, innerHeight } = e.target;
-
     this.setState({
       width: innerWidth,
       height: innerHeight,
