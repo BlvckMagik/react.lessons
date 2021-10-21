@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProductionList = ({ cartItems }) => {
+const ProductsList = ({ cartItems }) => {
   return (
     <div className='products'>
       <ul className='products__list'>
@@ -19,4 +19,4 @@ const ProductionList = ({ cartItems }) => {
   );
 };
 
-export default ProductionList;
+export default ProductsList;
