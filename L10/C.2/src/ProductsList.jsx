@@ -2,16 +2,16 @@ import React from 'react';
 
 const ProductionList = ({ cartItems }) => {
   return (
-    <div class='products'>
-      <ul class='products__list'>
+    <div className='products'>
+      <ul className='products__list'>
         {cartItems.map(({ id, name, price }) => (
-          <li key={id} class='products__list-item'>
-            <span class='products__item-name'>{name}</span>
-            <span class='products__item-price'>{`$${price}`}</span>
+          <li key={id} className='products__list-item'>
+            <span className='products__item-name'>{name}</span>
+            <span className='products__item-price'>{`$${price}`}</span>
           </li>
         ))}
       </ul>
-      <div class='products__total'>{`Total: $${cartItems.reduce(
+      <div className='products__total'>{`Total: $${cartItems.reduce(
         (acc, cart) => acc + cart.price,
         0
       )}`}</div>
