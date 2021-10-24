@@ -1,21 +1,23 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 const Expand = ({ title, isOpen, children, onChange }) => {
+  const icon = isOpen ? (
+    <i className='fas fa-chevron-up'></i>
+  ) : (
+    <i className='fas fa-chevron-down'></i>
+  );
+  let content = isOpen ? (
+    <div className='expand__content'>{children}</div>
+  ) : null;
   return (
     <div className='expand border'>
       <div className='expand__header'>
         <span className='expand__title'>{title}</span>
-        <button onClick={onChange} className='expand__toggle-btn'>
-          {isOpen ? (
-            <FontAwesomeIcon icon={faChevronUp} />
-          ) : (
-            <FontAwesomeIcon icon={faChevronDown} />
-          )}
+        <button className='expand__toggle-btn' onClick={onChange}>
+          {icon}
         </button>
       </div>
-      {isOpen ? <div className='expand__content'>{children}</div> : null}
+      {content}
     </div>
   );
 };
