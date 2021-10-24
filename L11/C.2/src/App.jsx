@@ -26,7 +26,7 @@ class App extends Component {
         </button>
         <Dialog
           isOpen={this.state.isOpen}
-          closeDialog={this.closeDialog}
+          onClose={this.closeDialog}
           title='Recommendation'
         >
           <p>
