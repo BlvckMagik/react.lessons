@@ -6,9 +6,6 @@ const Expand = ({ title, isOpen, children, onChange }) => {
   ) : (
     <i className='fas fa-chevron-down'></i>
   );
-  let content = isOpen ? (
-    <div className='expand__content'>{children}</div>
-  ) : null;
   return (
     <div className='expand border'>
       <div className='expand__header'>
@@ -17,7 +14,7 @@ const Expand = ({ title, isOpen, children, onChange }) => {
           {icon}
         </button>
       </div>
-      {content}
+      {isOpen ? <div className='expand__content'>{children}</div> : null}
     </div>
   );
 };
