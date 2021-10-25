@@ -34,9 +34,10 @@ class TasksList extends React.Component {
 
   onCheckboxChange = id => {
     const task = this.state.tasks.find(task => task.id === id);
+    const { done, text } = task;
     updateTask(id, {
-      ...task,
-      done: !task.done,
+      done: !done,
+      text,
     }).then(() => this.getTasksList());
   };
 
